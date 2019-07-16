@@ -5,11 +5,15 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node src/index.js",
+    "start": "node src/index.js && react-scripts start",
     "dev": "nodemon src/index1.js -e js,hbs"
   },
   "author": "Mohammedashraf",
   "license": "ISC",
+  "engines": {
+    "npm": "6.4.1",
+    "node":"10.10.0"
+  },
   "dependencies": {
     "bad-words": "^3.0.2",
     "express": "^4.17.1",

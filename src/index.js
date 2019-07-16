@@ -36,18 +36,6 @@ io.on('connection', (socket) => {
         callback()
     });
 
-    const autoScroll = () => {
-        // NEw message elemenmt
-        const $newMessage = $message.lastElementChild;
-
-        // Height of the new message
-        const newMessageStyles = getComputedStyle($newMessage);
-        const newMessageHeight = $newMessage.offsetHeight;
-
-        console.log("newMessageStyles  = ", newMessageStyles);
-        
-    }
-
     socket.broadcast.emit('message', 'A new user has joined!')
 
     socket.on('sendMessage', (message, callback) => {
@@ -58,7 +46,6 @@ io.on('connection', (socket) => {
         }
 
         io.to(user.room).emit('message', generateMessage(message, user.username))
-        // autoScroll();
         callback()
     })
 
@@ -67,7 +54,6 @@ io.on('connection', (socket) => {
             // console.log("coords = ", coords)
             // let msgLocation = generateMessage(`https://google.com/maps?q=${coords.latitude},${coords.longitude}`,user.username);
         io.emit('message', generatelocationMessage(`https://google.com/maps?q=${coords.latitude},${coords.longitude}`,user.username))
-        // autoScroll();
         callback()
     })
 
