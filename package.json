@@ -11,7 +11,7 @@
     "start": "node src/index.js",
     "dev1": "nodemon src/index.js -e js,hbs",
     "heroku-postbuild1": "cd react-chat-app/chatreact && npm install && npm start",
-    "heroku-postbuild": "cd react-chat-app/chatreact && npm install --only=dev --no-shrinkwrap && npm run build"
+    "heroku-postbuild": "cd react-chat-app/chatreact && npm install --only=dev --no-shrinkwrap && npm start"
 
   },
   "author": "Mohammedashraf",
