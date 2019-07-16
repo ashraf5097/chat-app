@@ -13,12 +13,14 @@ const io = socketio(server)
 const port = process.env.PORT || 3010
 const publicDirectoryPath = path.join(__dirname, '../react-chat-app/chatreact/')
 console.log("__dirname = ", __dirname);
+if (process.env.NODE_ENV === 'production') {
 
 app.use(express.static(publicDirectoryPath))
 
 app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname, '../react-chat-app/chatreact/public/index.html'));
   });
+}
 
 io.on('connection', (socket) => {
     console.log('New WebSocket connection')
