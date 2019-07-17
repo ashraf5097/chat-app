@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "client": "cd react-chat-app/chatreact && npm install && npm start",
-    "server": "nodemon server.js",
-    "start": "concurrently --kill-others-on-fail \"npm run startnew\" \"npm run client\"",
+    "start": "node server.js",
+    "server": "concurrently --kill-others-on-fail \"npm run startnew\" \"npm run client\"",
     "test": "echo \"Error: no test specified\" && exit 1",
     "startnew": "node src/index.js",
     "dev1": "nodemon src/index.js -e js,hbs",
