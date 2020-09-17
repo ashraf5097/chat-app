@@ -37,7 +37,7 @@ io.on('connection', (socket) => {
         const users = getUsersInRoom(user1.room);
     
         io.to(user.room).emit('userInRoom', users);
-        console.log("users = ", users);
+        console.log("userss = ", users);
 
         socket.to(user.room).emit('message', generateMessage(`${user.username} has joined`,'Admin'));
         callback()
